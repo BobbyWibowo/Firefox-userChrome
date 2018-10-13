@@ -1,0 +1,273 @@
+window#main-window {
+    font-family: Ubuntu, sans-serif;
+}
+
+/** Loading background **/
+
+.browserStack > browser {
+    background-color: #373b49;
+}
+
+/** et cetera **/
+
+#sidebar-header {
+    visibility: collapse;
+}
+
+.tabbrowser-tab[pending] {
+    opacity: 0.5;
+}
+
+/** Context Menus **/
+
+menupopup {
+    padding: 6px 0;
+}
+
+menu,
+menuitem,
+menucaption {
+    -moz-appearance: none;
+    margin: 0;
+    min-height: 24px;
+    padding: 4px 12px;
+    background-color: transparent;
+    color: -moz-dialogtext;
+}
+
+menu:not(:-moz-any([disabled], :active)):-moz-any(:hover, :focus),
+menuitem:not(:-moz-any([disabled], :active)):-moz-any(:hover, :focus),
+menucaption:not(:-moz-any([disabled], :active)):-moz-any(:hover, :focus) {
+    color: inherit;
+    background-color: var(--arrowpanel-dimmed);
+}
+
+menuseparator {
+    -moz-appearance: none;
+    min-height: 0;
+    border-top: 1px solid var(--panel-separator-color);
+    border-bottom: none;
+    margin: 6px 0;
+    padding: 0;
+}
+
+/** Tabs on bottom **/
+
+#navigator-toolbox toolbar:not(#nav-bar):not(#toolbar-menubar) {
+    -moz-box-ordinal-group: 10;
+}
+
+#TabsToolbar {
+    -moz-box-ordinal-group: 1000 !important;
+}
+
+/** Hides Tabs Till Hover **/
+
+:root {
+    --htth-animation-duration: 0.1s;
+    --htth-margin-closed: -30px;
+    --htth-margin-opened: -1px;
+}
+
+#navigator-toolbox {
+    transition: margin-bottom var(--htth-animation-duration);
+    margin-bottom: var(--htth-margin-opened);
+}
+
+#navigator-toolbox > #TabsToolbar {
+    position: relative;
+    z-index: 0;
+    box-shadow: 0 0 4px #0003;
+    margin-top: var(--htth-margin-closed);
+    transition: margin-top var(--htth-animation-duration);
+}
+
+#navigator-toolbox:hover {
+    margin-bottom: var(--htth-margin-closed);
+}
+
+#navigator-toolbox:hover > #TabsToolbar {
+    margin-top: var(--htth-margin-opened);
+}
+
+#navigator-toolbox > #nav-bar {
+    position: relative;
+    z-index: 1;
+}
+
+/** Disable Bookmarks Toolbar **/
+
+#navigator-toolbox > #PersonalToolbar {
+    visibility: collapse !important;
+}
+
+/** Colored folders for bookmark sidebar, toolbar, menu button, classic menu
+ Updated for Firefox 60 on May 10, 2018 **/
+
+/* Standard folder */
+#bookmarks-view treechildren::-moz-tree-image(container),
+#PlacesToolbarItems toolbarbutton[container="true"] .toolbarbutton-icon,
+#PlacesToolbarItems menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
+#PlacesChevronPopup menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
+#BMB_bookmarksPopup menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
+#bookmarksMenu menu[container="true"] > .menu-iconic-left > .menu-iconic-icon {
+    fill: #e8bb00 !important; /* slightly muted gold */
+}
+
+/* Live Bookmark (RSS Feed) */
+#bookmarks-view treechildren::-moz-tree-image(container, livemark),
+#PlacesToolbarItems toolbarbutton[container="true"][livemark="true"] .toolbarbutton-icon,
+#PlacesToolbarItems menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon,
+#PlacesChevronPopup menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon,
+#BMB_bookmarksPopup menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon,
+#bookmarksMenu menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon {
+    fill: orange !important;
+}
+
+/* Smart bookmark folder */
+#bookmarks-view treechildren::-moz-tree-image(container, query),
+#PlacesToolbarItems toolbarbutton[container="true"][query="true"] .toolbarbutton-icon,
+#PlacesToolbarItems menu[container="true"][query="true"] > .menu-iconic-left > .menu-iconic-icon,
+#PlacesChevronPopup menu[container="true"][query="true"] > .menu-iconic-left > .menu-iconic-icon,
+#BMB_bookmarksPopup menu[container="true"][query="true"] > .menu-iconic-left > .menu-iconic-icon,
+#bookmarksMenu menu[container="true"][query="true"] > .menu-iconic-left > .menu-iconic-icon {
+    fill: #69c !important; /* similar to blue smart folder color */
+}
+
+/* These "containers" are SVG in the sidebar, not yet on the menu */
+#bookmarks-view treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu),
+#bookmarks-view treechildren::-moz-tree-image(container, queryFolder_menu________){
+    fill: olive !important;
+}
+
+#bookmarks-view treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksToolbar),
+#bookmarks-view treechildren::-moz-tree-image(container, queryFolder_toolbar_____) {
+    fill: olive !important;
+}
+
+#bookmarks-view treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks),
+#bookmarks-view treechildren::-moz-tree-image(container, queryFolder_unfiled_____) {
+    fill: olive !important;
+}
+
+/* Avoid overriding classic Bookmarks Toolbar and Other Bookmarks icons in menus */
+#BMB_bookmarksPopup #BMB_bookmarksToolbar.menu-iconic-icon,
+#bookmarksMenu #bookmarksToolbarFolderMenu.menu-iconic-icon {
+    list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png") !important;
+}
+
+#BMB_bookmarksPopup #BMB_unsortedBookmarks.menu-iconic-icon,
+#bookmarksMenu #menu_unsortedBookmarks.menu-iconic-icon {
+    list-style-image: url("chrome://browser/skin/places/unsortedBookmarks.png") !important;
+}
+
+/*
+ * Compact findbar at the top of the window
+ *
+ * Contributor(s): Madis0
+ */
+
+/*
+.browserContainer > findbar {
+    -moz-box-ordinal-group: 0;
+    position: fixed !important;
+    right: 1em;
+    border: 1px solid threedshadow !important;
+
+    border-top: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+
+    transition: 400ms !important;
+    z-index: 0 !important;
+}
+*/
+
+/* Margin from top when hidden (necessary for the transition to work) */
+findbar[hidden] {
+    margin-top: -2em !important;
+}
+
+/* Aligns the close button to the center */
+.findbar-closebutton {
+    margin-inline-start: 0.5em !important;
+    vertical-align: middle !important;
+    margin-bottom: 0.25em !important;
+    height: inherit !important;
+}
+
+/*
+ * Makes the address bar and search bar borderless.
+ * Use the default white theme for an Edge-like look or in VivaldiFox with page colors applied
+ * on toolbar fields for a seamless one-color look.
+ *
+ * Contributor(s): Madis0
+ */
+
+#urlbar, .searchbar-textbox {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/*
+ * Only show close buttons on background tabs when hovering with the mouse
+ *
+ * Contributor(s): Timvde
+ */
+
+.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
+    display: none !important;
+}
+
+.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
+    display: -moz-box !important;
+}
+
+/* Minimal Mode */
+
+#urlbar {
+    background: none !important;;
+}
+
+:root:not([customizing]) #nav-bar toolbarbutton
+ {
+    margin-left: -28px !important;
+    opacity: 0 !important;
+    transform: scale(.85, .85) !important;
+    pointer-events: none !important;
+    transition: all 100ms var(--animation-easing-function) !important;
+}
+
+:root:not([customizing]) :hover > #nav-bar toolbarbutton,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
+:root:not([customizing]) :hover > #titlebar toolbarbutton {
+    transform: scale(1, 1) !important;
+    opacity:1 !important;
+    margin-left:0 !important;
+    pointer-events: auto !important;
+}
+
+:root:not([customizing]) #nav-bar toolbarspring {
+    -moz-box-flex: 0 !important;
+    min-width: 0 !important;
+}
+
+:root:not([customizing]) :hover > #nav-bar toolbarspring,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarspring,
+:root:not([customizing]) :hover > #titlebar toolbarspring {
+    -moz-box-flex: 80 !important;
+    min-width: 20px !important;
+}
+
+/* url bar text shrinks when in "stealth mode" */
+/*
+#nav-bar #urlbar {
+    font-size: 0.85em !important;
+    transition: all 100ms var(--animation-easing-function) !important;
+}
+
+:root:not([customizing]) :hover > #nav-bar #urlbar,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar #urlbar {
+    font-size: 1em !important;
+}
+*/
