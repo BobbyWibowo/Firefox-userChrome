@@ -5,10 +5,12 @@
     --in-content-text-color: #d3dae3 !important;
     --in-content-selected-text: #5294e2 !important;
 
+    --in-content-category-text: #d3dae3 !important;
+
     --in-content-box-background: #2f343f !important;
-    --in-content-box-background-odd: #404552 !important;
-    --in-content-box-background-hover: #5294e2 !important;
-    --in-content-box-background-active: #3daee9 !important;
+    --in-content-box-background-odd: #2f343f !important;
+    --in-content-box-background-hover: #404552 !important;
+    --in-content-box-background-active: #5294e2 !important;
 
     --in-content-box-border-color: #404552 !important;
 
@@ -160,6 +162,38 @@
 
     .top-sites-list:not(.dnd-active) .top-site-outer:-moz-any(.active, :focus, :hover) .tile {
         box-shadow: inset 0 0 0 1px #3daee9, 0 0 0 5px #3daee9 !important;
+    }
+}
+
+@-moz-document url-prefix("about:addons") {
+    .detail-view-container {
+        color: var(--in-content-text-color) !important;
+    }
+
+    .detail-row,
+    .detail-row-complex {
+        text-shadow: none !important;
+    }
+}
+
+@-moz-document url-prefix("resource://") {
+    *|*:link {
+        color: var(--in-content-link-color) !important;
+    }
+
+    *|*:link:hover {
+        color: var(--in-content-link-color-hover) !important;
+    }
+
+    *|*:link:active {
+        color: var(--in-content-link-color-active) !important;
+    }
+}
+
+@-moz-document url-prefix("moz-extension://") {
+    html,
+    body {
+        color: var(--in-content-page-color);
     }
 }
 
