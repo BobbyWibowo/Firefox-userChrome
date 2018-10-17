@@ -282,6 +282,6 @@ input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='check
 
 /*#tabContextMenu li#context_closeTabsToTheEnd,*/
 #tabContextMenu li#context_bookmarkAllTabs,
-#tabContextMenu li#context_closeOtherTabs {
+#tabContextMenu li[id="treestyletab@piro.sakura.ne.jp-context_closeOtherTabs"] {
     display: none;
 }
