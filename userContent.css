@@ -20,6 +20,13 @@
     --in-content-link-color-visited: #5294e2 !important;
 }
 
+@-moz-document url-prefix("about:blank") {
+    html {
+        background-color: var(--in-content-page-background);
+        color: var(--in-content-page-color);
+    }
+}
+
 @-moz-document regexp("^https?:\/\/raw\.githubusercontent\.com\/.*"), url-prefix("file:///") {
     html {
         background-color: var(--in-content-page-background);
@@ -285,3 +292,51 @@ input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='check
 #tabContextMenu li[id="treestyletab@piro.sakura.ne.jp-context_closeOtherTabs"] {
     display: none;
 }
+
+/* Styles PasteBin-based sites - For some reason CSP is blocking Stylus */
+
+/*
+@-moz-document
+    url-prefix('https://paste.fizi.ca/'),
+    url-prefix('https://paste.imirhil.fr/'),
+    url-prefix('https://privatebin.net/'),
+    url-prefix('https://paste.warth-hofer.de/'),
+    url-prefix('https://plexle.fi/'),
+    url-prefix('https://jaegers.net/apps/privatebin/') {
+    .container {
+        width: 100% !important;
+    }
+
+    #plaintext > div[class*="col-"] {
+        width: 100%;
+        max-width: 802px;
+        border: 1px solid #41403f;
+        background-color: #232325;
+        margin-bottom: 20px;
+    }
+
+    .well {
+        font-family: serif;
+        font-size: 24px;
+        line-height: 1.8;
+        padding: 1px 6% 30px;
+        margin-bottom: 0;
+    }
+
+    .well h2 {
+        margin: 30px 0;
+    }
+
+    .well p:nth-of-type(1) button {
+        margin: 30px auto;
+    }
+
+    .well p {
+        margin-bottom: 12px;
+    }
+
+    .well p br {
+        display: none;
+    }
+}
+*/

@@ -1,21 +1,17 @@
-window#main-window {
-    font-family: Ubuntu, sans-serif;
-}
-
 /** Loading background **/
 
-.browserStack > browser {
-    background-color: #373b49;
+.browserSidebarContainer {
+    background-color: #2f343f;
 }
 
 /** et cetera **/
 
 #sidebar-header {
-    visibility: collapse;
+    display: none;
 }
 
 .tabbrowser-tab[pending] {
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 /** Context Menus **/
@@ -57,7 +53,7 @@ menuseparator {
     -moz-box-ordinal-group: 10;
 }
 
-#TabsToolbar {
+#titlebar {
     -moz-box-ordinal-group: 1000 !important;
 }
 
@@ -74,7 +70,7 @@ menuseparator {
     margin-bottom: var(--htth-margin-opened);
 }
 
-#navigator-toolbox > #TabsToolbar {
+#navigator-toolbox > #titlebar {
     position: relative;
     z-index: 0;
     box-shadow: 0 0 4px #0003;
@@ -86,7 +82,7 @@ menuseparator {
     margin-bottom: var(--htth-margin-closed);
 }
 
-#navigator-toolbox:hover > #TabsToolbar {
+#navigator-toolbox:hover > #titlebar {
     margin-top: var(--htth-margin-opened);
 }
 
@@ -104,14 +100,14 @@ menuseparator {
 /** Colored folders for bookmark sidebar, toolbar, menu button, classic menu
  Updated for Firefox 60 on May 10, 2018 **/
 
-/* Standard folder */
+/* Standard folder - slightly muted gold */
 #bookmarks-view treechildren::-moz-tree-image(container),
 #PlacesToolbarItems toolbarbutton[container="true"] .toolbarbutton-icon,
 #PlacesToolbarItems menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
 #PlacesChevronPopup menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
 #BMB_bookmarksPopup menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
 #bookmarksMenu menu[container="true"] > .menu-iconic-left > .menu-iconic-icon {
-    fill: #e8bb00 !important; /* slightly muted gold */
+    fill: #e8bb00 !important;
 }
 
 /* Live Bookmark (RSS Feed) */
@@ -167,7 +163,6 @@ menuseparator {
  * Contributor(s): Madis0
  */
 
-/*
 .browserContainer > findbar {
     -moz-box-ordinal-group: 0;
     position: fixed !important;
@@ -181,7 +176,6 @@ menuseparator {
     transition: 400ms !important;
     z-index: 0 !important;
 }
-*/
 
 /* Margin from top when hidden (necessary for the transition to work) */
 findbar[hidden] {
@@ -204,7 +198,8 @@ findbar[hidden] {
  * Contributor(s): Madis0
  */
 
-#urlbar, .searchbar-textbox {
+#urlbar,
+.searchbar-textbox {
     border: none !important;
     box-shadow: none !important;
 }
@@ -223,30 +218,29 @@ findbar[hidden] {
     display: -moz-box !important;
 }
 
-/* Minimal Mode */
-
+/* Stealth Mode */
 #urlbar {
-    background: none !important;;
+    background: none !important;
 }
 
-:root:not([customizing]) #nav-bar toolbarbutton
+:root:not([customizing]) #navigator-toolbox :not(#page-action-buttons) > toolbarbutton
  {
-    margin-left: -28px !important;
-    opacity: 0 !important;
-    transform: scale(.85, .85) !important;
-    pointer-events: none !important;
+    /* margin-left: -28px !important; */
+    opacity: 0.5 !important;
+    /* transform: scale(.85, .85) !important;
+    pointer-events: none !important; */
     transition: all 100ms var(--animation-easing-function) !important;
 }
 
-:root:not([customizing]) :hover > #nav-bar toolbarbutton,
-:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
-:root:not([customizing]) :hover > #titlebar toolbarbutton {
-    transform: scale(1, 1) !important;
-    opacity:1 !important;
-    margin-left:0 !important;
-    pointer-events: auto !important;
+:root:not([customizing]) #navigator-toolbox:hover :not(#page-action-buttons) > toolbarbutton,
+:root:not([customizing]) #navigator-toolbox:focus-within :not(#page-action-buttons) > toolbarbutton {
+    /* transform: scale(1, 1) !important; */
+    opacity: 1 !important;
+    /* margin-left: 0 !important;
+    pointer-events: auto !important; */
 }
 
+/*
 :root:not([customizing]) #nav-bar toolbarspring {
     -moz-box-flex: 0 !important;
     min-width: 0 !important;
@@ -258,16 +252,17 @@ findbar[hidden] {
     -moz-box-flex: 80 !important;
     min-width: 20px !important;
 }
+*/
 
 /* url bar text shrinks when in "stealth mode" */
-/*
 #nav-bar #urlbar {
-    font-size: 0.85em !important;
+    /* font-size: 0.85em !important; */
     transition: all 100ms var(--animation-easing-function) !important;
+    opacity: 0.5;
 }
 
 :root:not([customizing]) :hover > #nav-bar #urlbar,
 :root:not([customizing]) #navigator-toolbox:focus-within #nav-bar #urlbar {
-    font-size: 1em !important;
+    /* font-size: 1em !important; */
+    opacity: 1;
 }
-*/
