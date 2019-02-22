@@ -1,6 +1,6 @@
 # Firefox-userChrome
 
-My personal userChrome/userContent, tailored for [Arc Dark KDE theme](https://github.com/PapirusDevelopmentTeam/arc-kde).
+My personal userChrome/userContent, tailored for [Materia Dark KDE theme](https://github.com/PapirusDevelopmentTeam/materia-kde).
 
 These are fully experimental and hosted here mainly as backups.
 
