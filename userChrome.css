@@ -228,8 +228,44 @@ findbar[hidden] {
     display: -moz-box !important;
 }
 
-/* Remove URL bar's background */
+/** Remove URL bar's background **/
 
 #urlbar {
     background: none !important;
+}
+
+/** Hide identity icon in address bar (the one before SSL icon) **/
+
+#identity-box {
+    padding-inline-start: 0 !important;;
+}
+
+#identity-icon {
+    width: 0 !important;;
+}
+
+#identity-popup {
+    margin-left: -8px !important;;
+}
+
+#identity-box:hover:not(.no-hover):not([open="true"]) {
+    border-radius: var(--toolbarbutton-border-radius) !important;
+}
+
+#identity-box[open="true"] {
+    background: none !important;
+}
+
+/** Add border radius to urlbar icons **/
+
+.urlbar-history-dropmarker,
+.urlbar-page-action {
+    border-radius: var(--toolbarbutton-border-radius) !important;
+}
+
+/** Increase opacity of syncing icon **/
+
+.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),
+[overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
+    opacity: 1 !important;
 }
