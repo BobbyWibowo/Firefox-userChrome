@@ -55,6 +55,7 @@ menuseparator {
 
 #navigator-toolbox toolbar:not(#nav-bar):not(#toolbar-menubar) {
     -moz-box-ordinal-group: 10;
+    margin-top: -1px;
 }
 
 #titlebar {
@@ -66,15 +67,13 @@ menuseparator {
 :root {
     --htth-animation-duration: 0.1s;
     --htth-margin-closed: -30px;
-    --htth-margin-opened: -1px;
 }
 
-#navigator-toolbox {
+window:not([privatebrowsingmode]) #navigator-toolbox {
     transition: margin-bottom var(--htth-animation-duration);
-    margin-bottom: var(--htth-margin-opened);
 }
 
-#navigator-toolbox>#titlebar {
+window:not([privatebrowsingmode]) #navigator-toolbox>#titlebar {
     position: relative;
     z-index: 0;
     box-shadow: 0 0 4px #0003;
@@ -82,15 +81,15 @@ menuseparator {
     transition: margin-top var(--htth-animation-duration);
 }
 
-#navigator-toolbox:hover {
+window:not([privatebrowsingmode]) #navigator-toolbox:hover {
     margin-bottom: var(--htth-margin-closed);
 }
 
-#navigator-toolbox:hover>#titlebar {
+window:not([privatebrowsingmode]) #navigator-toolbox:hover>#titlebar {
     margin-top: var(--htth-margin-opened);
 }
 
-#navigator-toolbox>#nav-bar {
+window:not([privatebrowsingmode]) #navigator-toolbox>#nav-bar {
     position: relative;
     z-index: 1;
 }
