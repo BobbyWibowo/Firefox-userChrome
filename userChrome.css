@@ -1,103 +1,102 @@
 :root {
-    --custom-browser-background: #303030;
+  --custom-browser-background: #303030;
+
+  /** Hide Tabs Till Hover **/
+  --htth-animation-duration: 0.1s;
+  --htth-margin-closed: -30px
 }
 
 /** Loading background **/
 
 .browserSidebarContainer {
-    background-color: var(--custom-browser-background);
+  background-color: var(--custom-browser-background)
 }
 
 /** et cetera **/
 
 #sidebar-header {
-    display: none;
+  display: none
 }
 
 .tabbrowser-tab[pending] {
-    opacity: 0.75;
+  opacity: 0.75
 }
 
 /** Context Menus **/
 
 menupopup {
-    padding: 6px 0;
+  padding: 6px 0
 }
 
 menu,
 menuitem,
 menucaption {
-    -moz-appearance: none;
-    margin: 0;
-    min-height: 24px;
-    padding: 4px 12px;
-    background-color: transparent;
-    color: -moz-dialogtext;
+  -moz-appearance: none;
+  margin: 0;
+  min-height: 24px;
+  padding: 4px 12px;
+  background-color: transparent;
+  color: -moz-dialogtext
 }
 
 menu:not(:-moz-any([disabled], :active)):-moz-any(:hover, :focus),
 menuitem:not(:-moz-any([disabled], :active)):-moz-any(:hover, :focus),
 menucaption:not(:-moz-any([disabled], :active)):-moz-any(:hover, :focus) {
-    color: inherit;
-    background-color: var(--arrowpanel-dimmed);
+  color: inherit;
+  background-color: var(--arrowpanel-dimmed)
 }
 
 menuseparator {
-    -moz-appearance: none;
-    min-height: 0;
-    border-top: 1px solid var(--panel-separator-color);
-    border-bottom: none;
-    margin: 6px 0;
-    padding: 0;
+  -moz-appearance: none;
+  min-height: 0;
+  border-top: 1px solid var(--panel-separator-color);
+  border-bottom: none;
+  margin: 6px 0;
+  padding: 0
 }
 
 /** Tabs on bottom **/
 
 #navigator-toolbox toolbar:not(#nav-bar):not(#toolbar-menubar) {
-    -moz-box-ordinal-group: 10;
-    margin-top: -1px;
+  -moz-box-ordinal-group: 10;
+  margin-top: -1px
 }
 
 #titlebar {
-    -moz-box-ordinal-group: 1000 !important;
+  -moz-box-ordinal-group: 1000 !important
 }
 
 /** Hides Tabs Till Hover **/
 
-:root {
-    --htth-animation-duration: 0.1s;
-    --htth-margin-closed: -30px;
-}
-
 window:not([privatebrowsingmode]) #navigator-toolbox {
-    transition: margin-bottom var(--htth-animation-duration);
+  transition: margin-bottom var(--htth-animation-duration)
 }
 
-window:not([privatebrowsingmode]) #navigator-toolbox>#titlebar {
-    position: relative;
-    z-index: 0;
-    box-shadow: 0 0 4px #0003;
-    margin-top: var(--htth-margin-closed);
-    transition: margin-top var(--htth-animation-duration);
+window:not([privatebrowsingmode]) #navigator-toolbox > #titlebar {
+  position: relative;
+  z-index: 0;
+  box-shadow: 0 0 4px #0003;
+  margin-top: var(--htth-margin-closed);
+  transition: margin-top var(--htth-animation-duration)
 }
 
 window:not([privatebrowsingmode]) #navigator-toolbox:hover {
-    margin-bottom: var(--htth-margin-closed);
+  margin-bottom: var(--htth-margin-closed)
 }
 
-window:not([privatebrowsingmode]) #navigator-toolbox:hover>#titlebar {
-    margin-top: var(--htth-margin-opened);
+window:not([privatebrowsingmode]) #navigator-toolbox:hover > #titlebar {
+  margin-top: var(--htth-margin-opened)
 }
 
-window:not([privatebrowsingmode]) #navigator-toolbox>#nav-bar {
-    position: relative;
-    z-index: 1;
+window:not([privatebrowsingmode]) #navigator-toolbox > #nav-bar {
+  position: relative;
+  z-index: 1
 }
 
 /** Disable Bookmarks Toolbar **/
 
-#navigator-toolbox>#PersonalToolbar {
-    visibility: collapse !important;
+#navigator-toolbox > #PersonalToolbar {
+  visibility: collapse !important
 }
 
 /** Colored folders for bookmark sidebar, toolbar, menu button, classic menu
@@ -107,63 +106,64 @@ window:not([privatebrowsingmode]) #navigator-toolbox>#nav-bar {
 
 #bookmarks-view treechildren::-moz-tree-image(container),
 #PlacesToolbarItems toolbarbutton[container="true"] .toolbarbutton-icon,
-#PlacesToolbarItems menu[container="true"]>.menu-iconic-left>.menu-iconic-icon,
-#PlacesChevronPopup menu[container="true"]>.menu-iconic-left>.menu-iconic-icon,
-#BMB_bookmarksPopup menu[container="true"]>.menu-iconic-left>.menu-iconic-icon,
-#bookmarksMenu menu[container="true"]>.menu-iconic-left>.menu-iconic-icon {
-    fill: #e8bb00 !important;
+#PlacesToolbarItems menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
+#PlacesChevronPopup menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
+#BMB_bookmarksPopup menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
+#bookmarksMenu menu[container="true"] > .menu-iconic-left > .menu-iconic-icon {
+  fill: #e8bb00 !important
 }
 
 /* Live Bookmark (RSS Feed) */
 
 #bookmarks-view treechildren::-moz-tree-image(container, livemark),
 #PlacesToolbarItems toolbarbutton[container="true"][livemark="true"] .toolbarbutton-icon,
-#PlacesToolbarItems menu[container="true"][livemark="true"]>.menu-iconic-left>.menu-iconic-icon,
-#PlacesChevronPopup menu[container="true"][livemark="true"]>.menu-iconic-left>.menu-iconic-icon,
-#BMB_bookmarksPopup menu[container="true"][livemark="true"]>.menu-iconic-left>.menu-iconic-icon,
-#bookmarksMenu menu[container="true"][livemark="true"]>.menu-iconic-left>.menu-iconic-icon {
-    fill: orange !important;
+#PlacesToolbarItems menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon,
+#PlacesChevronPopup menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon,
+#BMB_bookmarksPopup menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon,
+#bookmarksMenu menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon {
+  fill: orange !important
 }
 
 /* Smart bookmark folder */
 
 #bookmarks-view treechildren::-moz-tree-image(container, query),
 #PlacesToolbarItems toolbarbutton[container="true"][query="true"] .toolbarbutton-icon,
-#PlacesToolbarItems menu[container="true"][query="true"]>.menu-iconic-left>.menu-iconic-icon,
-#PlacesChevronPopup menu[container="true"][query="true"]>.menu-iconic-left>.menu-iconic-icon,
-#BMB_bookmarksPopup menu[container="true"][query="true"]>.menu-iconic-left>.menu-iconic-icon,
-#bookmarksMenu menu[container="true"][query="true"]>.menu-iconic-left>.menu-iconic-icon {
-    fill: #69c !important;
-    /* similar to blue smart folder color */
+#PlacesToolbarItems menu[container="true"][query="true"] > .menu-iconic-left > .menu-iconic-icon,
+#PlacesChevronPopup menu[container="true"][query="true"] > .menu-iconic-left > .menu-iconic-icon,
+#BMB_bookmarksPopup menu[container="true"][query="true"] > .menu-iconic-left > .menu-iconic-icon,
+#bookmarksMenu menu[container="true"][query="true"] > .menu-iconic-left > .menu-iconic-icon {
+  fill: #69c !important;
+
+  /* similar to blue smart folder color */
 }
 
 /* These "containers" are SVG in the sidebar, not yet on the menu */
 
-#bookmarks-view treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu),
-#bookmarks-view treechildren::-moz-tree-image(container, queryFolder_menu________) {
-    fill: olive !important;
+#bookmarks-view treechildren::-moz-tree-image(container, organizerquery_bookmarksmenu),
+#bookmarks-view treechildren::-moz-tree-image(container, queryfolder_menu________) {
+  fill: olive !important
 }
 
-#bookmarks-view treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksToolbar),
-#bookmarks-view treechildren::-moz-tree-image(container, queryFolder_toolbar_____) {
-    fill: olive !important;
+#bookmarks-view treechildren::-moz-tree-image(container, organizerquery_bookmarkstoolbar),
+#bookmarks-view treechildren::-moz-tree-image(container, queryfolder_toolbar_____) {
+  fill: olive !important
 }
 
-#bookmarks-view treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks),
-#bookmarks-view treechildren::-moz-tree-image(container, queryFolder_unfiled_____) {
-    fill: olive !important;
+#bookmarks-view treechildren::-moz-tree-image(container, organizerquery_unfiledbookmarks),
+#bookmarks-view treechildren::-moz-tree-image(container, queryfolder_unfiled_____) {
+  fill: olive !important
 }
 
 /* Avoid overriding classic Bookmarks Toolbar and Other Bookmarks icons in menus */
 
 #BMB_bookmarksPopup #BMB_bookmarksToolbar.menu-iconic-icon,
 #bookmarksMenu #bookmarksToolbarFolderMenu.menu-iconic-icon {
-    list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png") !important;
+  list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png") !important
 }
 
 #BMB_bookmarksPopup #BMB_unsortedBookmarks.menu-iconic-icon,
 #bookmarksMenu #menu_unsortedBookmarks.menu-iconic-icon {
-    list-style-image: url("chrome://browser/skin/places/unsortedBookmarks.png") !important;
+  list-style-image: url("chrome://browser/skin/places/unsortedBookmarks.png") !important
 }
 
 /*
@@ -172,31 +172,31 @@ window:not([privatebrowsingmode]) #navigator-toolbox>#nav-bar {
  * Contributor(s): Madis0
  */
 
-.browserContainer>findbar {
-    -moz-box-ordinal-group: 0;
-    position: fixed !important;
-    right: 1em;
-    border: 1px solid threedshadow !important;
-    border-top: none !important;
-    box-shadow: none !important;
-    background-image: none !important;
-    transition: 400ms !important;
-    z-index: 0 !important;
+.browserContainer > findbar {
+  -moz-box-ordinal-group: 0;
+  position: fixed !important;
+  right: 1em;
+  border: 1px solid threedshadow !important;
+  border-top: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  transition: 400ms !important;
+  z-index: 0 !important
 }
 
 /* Margin from top when hidden (necessary for the transition to work) */
 
 findbar[hidden] {
-    margin-top: -2em !important;
+  margin-top: -2em !important
 }
 
 /* Aligns the close button to the center */
 
 .findbar-closebutton {
-    margin-inline-start: 0.5em !important;
-    vertical-align: middle !important;
-    margin-bottom: 0.25em !important;
-    height: inherit !important;
+  margin-inline-start: 0.5em !important;
+  vertical-align: middle !important;
+  margin-bottom: 0.25em !important;
+  height: inherit !important
 }
 
 /*
@@ -209,8 +209,8 @@ findbar[hidden] {
 
 #urlbar,
 .searchbar-textbox {
-    border: none !important;
-    box-shadow: none !important;
+  border: none !important;
+  box-shadow: none !important
 }
 
 /*
@@ -220,51 +220,51 @@ findbar[hidden] {
  */
 
 .tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
-    display: none !important;
+  display: none !important
 }
 
 .tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
-    display: -moz-box !important;
+  display: -moz-box !important
 }
 
 /** Remove URL bar's background **/
 
 #urlbar {
-    background: none !important;
+  background: none !important
 }
 
 /** Hide identity icon in address bar (the one before SSL icon) **/
 
 #identity-box {
-    padding-inline-start: 0 !important;;
+  padding-inline-start: 0 !important
 }
 
 #identity-icon {
-    width: 0 !important;;
+  width: 0 !important
 }
 
 #identity-popup {
-    margin-left: -8px !important;;
+  margin-left: -8px !important
 }
 
 #identity-box:hover:not(.no-hover):not([open="true"]) {
-    border-radius: var(--toolbarbutton-border-radius) !important;
+  border-radius: var(--toolbarbutton-border-radius) !important
 }
 
 #identity-box[open="true"] {
-    background: none !important;
+  background: none !important
 }
 
 /** Add border radius to urlbar icons **/
 
 .urlbar-history-dropmarker,
 .urlbar-page-action {
-    border-radius: var(--toolbarbutton-border-radius) !important;
+  border-radius: var(--toolbarbutton-border-radius) !important
 }
 
 /** Increase opacity of syncing icon **/
 
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),
 [overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
-    opacity: 1 !important;
+  opacity: 1 !important
 }

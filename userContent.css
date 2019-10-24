@@ -1,268 +1,302 @@
 :root {
-    --in-content-page-color: #dfdfdf !important;
-    --in-content-page-background: #303030 !important;
-    --in-content-text-color: #dfdfdf !important;
-    --in-content-selected-text: #3b5074 !important;
-    --in-content-category-text: #d3dae3 !important;
-    --in-content-box-background: #2f343f !important;
-    --in-content-box-background-odd: #2f343f !important;
-    --in-content-box-background-hover: #404552 !important;
-    --in-content-box-background-active: #5294e2 !important;
-    --in-content-box-border-color: #404552 !important;
-    --in-content-link-color: #2980b9 !important;
-    --in-content-link-color-hover: #5294e2 !important;
-    --in-content-link-color-active: #3daee9 !important;
-    --in-content-link-color-visited: #5294e2 !important;
+  --in-content-page-color: #dfdfdf !important;
+  --in-content-page-background: #303030 !important;
+  --in-content-text-color: #dfdfdf !important;
+  --in-content-selected-text: #3b5074 !important;
+  --in-content-category-text: #d3dae3 !important;
+  --in-content-box-background: #2f343f !important;
+  --in-content-box-background-odd: #2f343f !important;
+  --in-content-box-background-hover: #404552 !important;
+  --in-content-box-background-active: #5294e2 !important;
+  --in-content-box-border-color: #404552 !important;
+  --in-content-link-color: #2980b9 !important;
+  --in-content-link-color-hover: #5294e2 !important;
+  --in-content-link-color-active: #3daee9 !important;
+  --in-content-link-color-visited: #5294e2 !important
 }
 
+/*
 @-moz-document url-prefix("about:blank") {
-    html {
-        background-color: var(--in-content-page-background);
-        color: var(--in-content-page-color);
-    }
+  html {
+    background-color: var(--in-content-page-background);
+    color: var(--in-content-page-color)
+  }
 }
+*/
 
 @-moz-document regexp("^https?:\/\/raw\.githubusercontent\.com\/.*"),
-url-prefix("file:///") {
-    html {
-        background-color: var(--in-content-page-background);
-        color: var(--in-content-page-color);
-        /* font-size: 1rem; */
-    }
+  url-prefix("file:///") {
+  html {
+    background-color: var(--in-content-page-background);
+    color: var(--in-content-page-color);
+
+    /* font-size: 1rem; */
+  }
 }
 
+/*
 @-moz-document url-prefix("about:") {
-    button.primary {
-        color: var(--in-content-text-color) !important;
-    }
+  button.primary {
+    color: var(--in-content-text-color) !important
+  }
 }
+*/
 
 @-moz-document url-prefix("about:reader") {
-    :root {
-        --toolbar-dark-background-color: #404552;
-        --toolbar-dark-text-color: #d3dae3;
-        --reader-dark-background-color: #2f343f;
-        --reader-dark-text-color: #d3dae3;
-    }
-    body.serif {
-        font-family: serif !important;
-    }
-    body.sans-serif {
-        font-family: sans-serif !important;
-    }
-    body.dark {
-        background-color: var(--reader-dark-background-color) !important;
-        color: var(--reader-dark-text-color) !important;
-    }
-    body.dark .domain {
-        color: #2980b9 !important;
-        border-bottom: 0 !important;
-    }
-    body.dark .domain:hover {
-        color: #5294e2 !important;
-    }
-    body.dark .toolbar {
-        background-color: var(--toolbar-dark-background-color) !important;
-        color: var(--toolbar-dark-text-color) !important;
-        border-right: 1px solid #666a73 !important;
-    }
-    body.dark .style-button,
-    body.dark .close-button {
-        background-image: none !important;
-        background-color: var(--toolbar-dark-background-color) !important;
-        border-color: #666a73 !important;
-    }
-    body.dark .style-button:after,
-    body.dark .close-button:after {
-        color: var(--toolbar-dark-text-color) !important;
-        font-size: 22px;
-    }
-    body.dark .style-button:after {
-        content: 'Aa';
-    }
-    body.dark .close-button:after {
-        content: '←';
-    }
+  :root {
+    --toolbar-dark-background-color: #404552;
+    --toolbar-dark-text-color: #d3dae3;
+    --reader-dark-background-color: #2f343f;
+    --reader-dark-text-color: #d3dae3
+  }
+
+  body.serif {
+    font-family: serif !important
+  }
+
+  body.sans-serif {
+    font-family: sans-serif !important
+  }
+
+  body.dark {
+    background-color: var(--reader-dark-background-color) !important;
+    color: var(--reader-dark-text-color) !important
+  }
+
+  body.dark .domain {
+    color: #2980b9 !important;
+    border-bottom: 0 !important
+  }
+
+  body.dark .domain:hover {
+    color: #5294e2 !important
+  }
+
+  body.dark .toolbar {
+    background-color: var(--toolbar-dark-background-color) !important;
+    color: var(--toolbar-dark-text-color) !important;
+    border-right: 1px solid #666a73 !important
+  }
+
+  body.dark .style-button,
+  body.dark .close-button {
+    background-image: none !important;
+    background-color: var(--toolbar-dark-background-color) !important;
+    border-color: #666a73 !important
+  }
+
+  body.dark .style-button::after,
+  body.dark .close-button::after {
+    color: var(--toolbar-dark-text-color) !important;
+    font-size: 22px
+  }
+
+  body.dark .style-button::after {
+    content: 'Aa'
+  }
+
+  body.dark .close-button::after {
+    content: '←'
+  }
 }
 
 @-moz-document url-prefix("about:home"),
-url-prefix("about:newtab") {
-    body {
-        background-color: var(--in-content-page-background) !important;
-    }
-    input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type="checkbox"]):not([type="radio"]) {
-        background-color: var(--in-content-page-background) !important;
-        color: var(--in-content-page-color) !important;
-    }
-    .search-wrapper .logo-and-wordmark .wordmark {
-        fill: var(--in-content-page-color) !important;
-    }
-    .SnippetBaseContainer {
-        background-color: var(--in-content-page-background) !important;
-        color: var(--in-content-page-color) !important;
-    }
-    #scene1 h1,
-    #scene1 p,
-    .snippet section {
-        color: #d3dae3 !important;
-    }
-    #snippets-container a {
-        color: #00bcd4 !important;
-    }
-    #snippets-container a:hover {
-        color: #00bcd4 !important;
-    }
-    .icon.icon-settings,
-    .search-wrapper .search-button,
-    .snippet .block-snippet-button {
-        fill: #d3dae3 !important;
-    }
-    .search-wrapper:active input,
-    .search-wrapper input:focus {
-        border: 1px solid #3daee9 !important;
-        box-shadow: #3daee9 !important;
-    }
-    .prefs-button button:hover,
-    .prefs-button button:focus {
-        background-color: transparent !important;
-        fill: #bdc3c7 !important;
-    }
-    .collapsible-section.active {
-        background-color: #2f343f !important;
-    }
-    .top-site-outer .top-site-icon {
-        background-color: #373b49 !important;
-    }
-    .collapsible-section .section-title span {
-        fill: #d3dae3 !important;
-    }
-    .collapsible-section .section-title span,
-    .top-site-outer .top-site-inner>a {
-        color: #d3dae3 !important;
-    }
-    .collapsible-section .section-top-bar .context-menu-button {
-        visibility: collapse;
-    }
-    .top-sites-list:not(.dnd-active) .top-site-outer:-moz-any(.active, :focus, :hover) .tile {
-        box-shadow: inset 0 0 0 1px #3daee9, 0 0 0 5px #3daee9 !important;
-    }
+  url-prefix("about:newtab") {
+  body {
+    background-color: var(--in-content-page-background) !important
+  }
+
+  input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type="checkbox"]):not([type="radio"]) {
+    background-color: var(--in-content-page-background) !important;
+    color: var(--in-content-page-color) !important
+  }
+
+  .search-wrapper .logo-and-wordmark .wordmark {
+    fill: var(--in-content-page-color) !important
+  }
+
+  .SnippetBaseContainer {
+    background-color: var(--in-content-page-background) !important;
+    color: var(--in-content-page-color) !important
+  }
+
+  #scene1 h1,
+  #scene1 p,
+  .snippet section {
+    color: #d3dae3 !important
+  }
+
+  #snippets-container a {
+    color: #00bcd4 !important
+  }
+
+  #snippets-container a:hover {
+    color: #00bcd4 !important
+  }
+
+  .icon.icon-settings,
+  .search-wrapper .search-button,
+  .snippet .block-snippet-button {
+    fill: #d3dae3 !important
+  }
+
+  .search-wrapper:active input,
+  .search-wrapper input:focus {
+    border: 1px solid #3daee9 !important;
+    box-shadow: #3daee9 !important
+  }
+
+  .prefs-button button:hover,
+  .prefs-button button:focus {
+    background-color: transparent !important;
+    fill: #bdc3c7 !important
+  }
+
+  .collapsible-section.active {
+    background-color: #2f343f !important
+  }
+
+  .top-site-outer .top-site-icon {
+    background-color: #373b49 !important
+  }
+
+  .collapsible-section .section-title span {
+    fill: #d3dae3 !important
+  }
+
+  .collapsible-section .section-title span,
+  .top-site-outer .top-site-inner > a {
+    color: #d3dae3 !important
+  }
+
+  .collapsible-section .section-top-bar .context-menu-button {
+    visibility: collapse
+  }
+
+  .top-sites-list:not(.dnd-active) .top-site-outer:-moz-any(.active, :focus, :hover) .tile {
+    box-shadow: inset 0 0 0 1px #3daee9, 0 0 0 5px #3daee9 !important
+  }
 }
 
+/*
 @-moz-document url-prefix("about:addons") {
-    .detail-view-container {
-        color: var(--in-content-text-color) !important;
-    }
-    .detail-row,
-    .detail-row-complex {
-        text-shadow: none !important;
-    }
+  .detail-view-container {
+    color: var(--in-content-text-color) !important
+  }
+
+  .detail-row,
+  .detail-row-complex {
+    text-shadow: none !important
+  }
 }
 
 @-moz-document url-prefix("resource://") {
-    *|*:link {
-        color: var(--in-content-link-color) !important;
-    }
-    *|*:link:hover {
-        color: var(--in-content-link-color-hover) !important;
-    }
-    *|*:link:active {
-        color: var(--in-content-link-color-active) !important;
-    }
+  *|*:link {
+    color: var(--in-content-link-color) !important
+  }
+
+  *|*:link:hover {
+    color: var(--in-content-link-color-hover) !important
+  }
+
+  *|*:link:active {
+    color: var(--in-content-link-color-active) !important
+  }
 }
 
 @-moz-document url-prefix("moz-extension://") {
-    html,
-    body {
-        color: var(--in-content-page-color);
-    }
+  html,
+  body {
+    color: var(--in-content-page-color)
+  }
 }
+*/
 
 input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']):not([type='radio']),
 textarea,
 select {
-    -moz-appearance: none !important;
-    background-color: white;
-    color: black;
+  -moz-appearance: none !important;
+  background-color: white;
+  color: black
 }
 
 #downloads-indicator-counter {
-    color: white;
+  color: white
 }
 
 #tabbar .counter {
-    background-color: #404552;
-    color: #d3dae3;
-    padding: 4px 5px;
-    border-radius: 4px;
-    margin-right: 5px;
-    box-shadow: 0 1px 4px 0 #0c0c0d1a, 0 0 0 1px #0003;
+  background-color: #404552;
+  color: #d3dae3;
+  padding: 4px 5px;
+  border-radius: 4px;
+  margin-right: 5px;
+  box-shadow: 0 1px 4px 0 #0c0c0d1a, 0 0 0 1px #0003
 }
 
 #tabbar .counter::before {
-    content: none !important;
+  content: none !important
 }
 
 #tabbar .counter::after {
-    content: none !important;
+  content: none !important
 }
 
 #tabbar .newtab-button {
-    padding: 6px !important;
+  padding: 6px !important
 }
 
 #tabbar .tab.discarded {
-    opacity: 0.5 !important;
+  opacity: 0.5 !important
 }
 
 #tabbar .tab .closebox {
-    visibility: collapse;
+  visibility: collapse
 }
 
 #tabbar .tab:hover .closebox {
-    visibility: visible;
+  visibility: visible
 }
 
 /** Context menus of Tree Style Tab **/
 
 #tabContextMenu,
 #tabContextMenu li:not(.separator).has-submenu ul {
-    -moz-appearance: menupopup;
-    box-shadow: none !important;
-    min-width: 1px;
-    color: MenuText !important;
-    padding: 6px 0 !important;
-    background-color: #383c4a;
+  -moz-appearance: menupopup;
+  box-shadow: none !important;
+  min-width: 1px;
+  color: MenuText !important;
+  padding: 6px 0 !important;
+  background-color: #383c4a
 }
 
 #tabContextMenu li:not(.separator) {
-    -moz-appearance: none;
-    min-height: 24px;
-    padding: 4px 36px !important;
-    background-color: transparent;
-    color: -moz-dialogtext;
-    max-width: 42em;
-    font: menu;
+  -moz-appearance: none;
+  min-height: 24px;
+  padding: 4px 36px !important;
+  background-color: transparent;
+  color: -moz-dialogtext;
+  max-width: 42em;
+  font: menu
 }
 
 #tabContextMenu li:not(.separator):focus,
 #tabContextMenu li:not(.separator).open {
-    background-color: #cccccc4d !important;
+  background-color: #cccccc4d !important
 }
 
 #tabContextMenu li.separator {
-    -moz-appearance: none;
-    min-height: 0;
-    border-top: 1px solid #2b2e39 !important;
-    border-bottom: none !important;
-    margin: 6px 0 !important;
-    padding: 0 !important;
+  -moz-appearance: none;
+  min-height: 0;
+  border-top: 1px solid #2b2e39 !important;
+  border-bottom: none !important;
+  margin: 6px 0 !important;
+  padding: 0 !important
 }
 
 #tabContextMenu li[data-icon]:not([data-icon-color]) {
-    background-position-x: calc(1em - 16px + 1em) !important;
+  background-position-x: calc(1em - 16px + 1em) !important
 }
 
-#tabContextMenu li#context_bookmarkAllTabs,
-#tabContextMenu li[id="treestyletab@piro.sakura.ne.jp-context_closeOtherTabs"] {
-    display: none;
+#tabContextMenu #treestyletab_piro_sakura_ne_jp-menuitem-_context_closeOtherTabs {
+  display: none
 }
