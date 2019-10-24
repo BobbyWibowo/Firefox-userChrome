@@ -212,6 +212,7 @@
 }
 */
 
+/*
 input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']):not([type='radio']),
 textarea,
 select {
@@ -256,47 +257,4 @@ select {
 #tabbar .tab:hover .closebox {
   visibility: visible
 }
-
-/** Context menus of Tree Style Tab **/
-
-#tabContextMenu,
-#tabContextMenu li:not(.separator).has-submenu ul {
-  -moz-appearance: menupopup;
-  box-shadow: none !important;
-  min-width: 1px;
-  color: MenuText !important;
-  padding: 6px 0 !important;
-  background-color: #383c4a
-}
-
-#tabContextMenu li:not(.separator) {
-  -moz-appearance: none;
-  min-height: 24px;
-  padding: 4px 36px !important;
-  background-color: transparent;
-  color: -moz-dialogtext;
-  max-width: 42em;
-  font: menu
-}
-
-#tabContextMenu li:not(.separator):focus,
-#tabContextMenu li:not(.separator).open {
-  background-color: #cccccc4d !important
-}
-
-#tabContextMenu li.separator {
-  -moz-appearance: none;
-  min-height: 0;
-  border-top: 1px solid #2b2e39 !important;
-  border-bottom: none !important;
-  margin: 6px 0 !important;
-  padding: 0 !important
-}
-
-#tabContextMenu li[data-icon]:not([data-icon-color]) {
-  background-position-x: calc(1em - 16px + 1em) !important
-}
-
-#tabContextMenu #treestyletab_piro_sakura_ne_jp-menuitem-_context_closeOtherTabs {
-  display: none
-}
+*/

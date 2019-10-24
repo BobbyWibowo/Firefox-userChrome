@@ -268,3 +268,47 @@ findbar[hidden] {
 [overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
   opacity: 1 !important
 }
+
+/** Context menus of Tree Style Tab **/
+
+#contentAreaContextMenu,
+#contentAreaContextMenu li:not(.separator).has-submenu ul {
+  -moz-appearance: menupopup;
+  box-shadow: none !important;
+  min-width: 1px;
+  color: MenuText !important;
+  padding: 6px 0 !important;
+  background-color: #383c4a
+}
+
+#contentAreaContextMenu li:not(.separator) {
+  -moz-appearance: none;
+  min-height: 24px;
+  padding: 4px 36px !important;
+  background-color: transparent;
+  color: -moz-dialogtext;
+  max-width: 42em;
+  font: menu
+}
+
+#contentAreaContextMenu li:not(.separator):focus,
+#contentAreaContextMenu li:not(.separator).open {
+  background-color: #cccccc4d !important
+}
+
+#contentAreaContextMenu li.separator {
+  -moz-appearance: none;
+  min-height: 0;
+  border-top: 1px solid #2b2e39 !important;
+  border-bottom: none !important;
+  margin: 6px 0 !important;
+  padding: 0 !important
+}
+
+#contentAreaContextMenu li[data-icon]:not([data-icon-color]) {
+  background-position-x: calc(1em - 16px + 1em) !important
+}
+
+#contentAreaContextMenu #treestyletab_piro_sakura_ne_jp-menuitem-_context_closeOtherTabs {
+  display: none
+}
