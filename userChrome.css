@@ -233,28 +233,6 @@ findbar[hidden] {
   background: none !important;
 }
 
-/** Hide identity icon in address bar (the one before SSL icon) **/
-
-#identity-box {
-  padding-inline-start: 0 !important;
-}
-
-#identity-icon {
-  width: 0 !important;
-}
-
-#identity-popup {
-  margin-left: -8px !important;
-}
-
-#identity-box:hover:not(.no-hover):not([open="true"]) {
-  border-radius: var(--toolbarbutton-border-radius) !important;
-}
-
-#identity-box[open="true"] {
-  background: none !important;
-}
-
 /** Add border radius to urlbar icons **/
 
 .urlbar-history-dropmarker,

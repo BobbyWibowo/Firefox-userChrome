@@ -6,13 +6,13 @@ These are fully experimental and hosted here mainly as backups.
 
 ## Features
 
-* Minimal mode: tabs are hidden by default. They'll be shown when hovering the address bar. This is to be used with [Tree Style Tab extension](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/).
-* Dark theme in new tab, default error messages (due to connection issue and whatnots) and reader mode (only when dark mode is used). `about:*` pages are darkened too, but haven't been cleaned.
-* Themed context menu.
+* Minimal mode: tabs are hidden by default. They will be shown when hovering the address bar. This is to be used with [Tree Style Tab extension](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/).
+* Dark theme in built-in home and new tab pages, GitHub raw files, local files, blank pages (matches Firefox's built-in dark color scheme).
+* Larger context menus (I may remove this in the future).
+* Compact find bar (Ctrl+F).
+* Borderless address and search bars.
 * etc.
 
-## Known issues
+## To-do(s)
 
-* "Get Add-ons" window in `about:addons` is not themed.
-* addons.mozilla.org is not themed (it should be part of this to theme it due to the fact that extensions can not tamper with this site).
-* etc.
+* Update dark color scheme for Reader mode (currently using an old color scheme based on Arc-Dark).
