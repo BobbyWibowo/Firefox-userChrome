@@ -3,29 +3,29 @@
 
   /** Hide Tabs Till Hover **/
   --htth-animation-duration: 0.1s;
-  --htth-margin-closed: -30px
+  --htth-margin-closed: -30px;
 }
 
 /** Loading background **/
 
 .browserSidebarContainer {
-  background-color: var(--custom-browser-background)
+  background-color: var(--custom-browser-background);
 }
 
 /** et cetera **/
 
 #sidebar-header {
-  display: none
+  display: none;
 }
 
 .tabbrowser-tab[pending] {
-  opacity: 0.75
+  opacity: 0.75;
 }
 
 /** Context Menus **/
 
 menupopup {
-  padding: 6px 0
+  padding: 6px 0;
 }
 
 menu,
@@ -36,14 +36,14 @@ menucaption {
   min-height: 24px;
   padding: 4px 12px;
   background-color: transparent;
-  color: -moz-dialogtext
+  color: -moz-dialogtext;
 }
 
 menu:not(:-moz-any([disabled], :active)):-moz-any(:hover, :focus),
 menuitem:not(:-moz-any([disabled], :active)):-moz-any(:hover, :focus),
 menucaption:not(:-moz-any([disabled], :active)):-moz-any(:hover, :focus) {
   color: inherit;
-  background-color: var(--arrowpanel-dimmed)
+  background-color: var(--arrowpanel-dimmed);
 }
 
 menuseparator {
@@ -52,24 +52,24 @@ menuseparator {
   border-top: 1px solid var(--panel-separator-color);
   border-bottom: none;
   margin: 6px 0;
-  padding: 0
+  padding: 0;
 }
 
 /** Tabs on bottom **/
 
 #navigator-toolbox toolbar:not(#nav-bar):not(#toolbar-menubar) {
   -moz-box-ordinal-group: 10;
-  margin-top: -1px
+  margin-top: -1px;
 }
 
 #titlebar {
-  -moz-box-ordinal-group: 1000 !important
+  -moz-box-ordinal-group: 1000 !important;
 }
 
 /** Hides Tabs Till Hover **/
 
 window:not([privatebrowsingmode]) #navigator-toolbox {
-  transition: margin-bottom var(--htth-animation-duration)
+  transition: margin-bottom var(--htth-animation-duration);
 }
 
 window:not([privatebrowsingmode]) #navigator-toolbox > #titlebar {
@@ -77,26 +77,26 @@ window:not([privatebrowsingmode]) #navigator-toolbox > #titlebar {
   z-index: 0;
   box-shadow: 0 0 4px #0003;
   margin-top: var(--htth-margin-closed);
-  transition: margin-top var(--htth-animation-duration)
+  transition: margin-top var(--htth-animation-duration);
 }
 
 window:not([privatebrowsingmode]) #navigator-toolbox:hover {
-  margin-bottom: var(--htth-margin-closed)
+  margin-bottom: var(--htth-margin-closed);
 }
 
 window:not([privatebrowsingmode]) #navigator-toolbox:hover > #titlebar {
-  margin-top: var(--htth-margin-opened)
+  margin-top: var(--htth-margin-opened);
 }
 
 window:not([privatebrowsingmode]) #navigator-toolbox > #nav-bar {
   position: relative;
-  z-index: 1
+  z-index: 1;
 }
 
 /** Disable Bookmarks Toolbar **/
 
 #navigator-toolbox > #PersonalToolbar {
-  visibility: collapse !important
+  visibility: collapse !important;
 }
 
 /** Colored folders for bookmark sidebar, toolbar, menu button, classic menu
@@ -110,7 +110,7 @@ window:not([privatebrowsingmode]) #navigator-toolbox > #nav-bar {
 #PlacesChevronPopup menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
 #BMB_bookmarksPopup menu[container="true"] > .menu-iconic-left > .menu-iconic-icon,
 #bookmarksMenu menu[container="true"] > .menu-iconic-left > .menu-iconic-icon {
-  fill: #e8bb00 !important
+  fill: #e8bb00 !important;
 }
 
 /* Live Bookmark (RSS Feed) */
@@ -121,7 +121,7 @@ window:not([privatebrowsingmode]) #navigator-toolbox > #nav-bar {
 #PlacesChevronPopup menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon,
 #BMB_bookmarksPopup menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon,
 #bookmarksMenu menu[container="true"][livemark="true"] > .menu-iconic-left > .menu-iconic-icon {
-  fill: orange !important
+  fill: orange !important;
 }
 
 /* Smart bookmark folder */
@@ -141,29 +141,29 @@ window:not([privatebrowsingmode]) #navigator-toolbox > #nav-bar {
 
 #bookmarks-view treechildren::-moz-tree-image(container, organizerquery_bookmarksmenu),
 #bookmarks-view treechildren::-moz-tree-image(container, queryfolder_menu________) {
-  fill: olive !important
+  fill: olive !important;
 }
 
 #bookmarks-view treechildren::-moz-tree-image(container, organizerquery_bookmarkstoolbar),
 #bookmarks-view treechildren::-moz-tree-image(container, queryfolder_toolbar_____) {
-  fill: olive !important
+  fill: olive !important;
 }
 
 #bookmarks-view treechildren::-moz-tree-image(container, organizerquery_unfiledbookmarks),
 #bookmarks-view treechildren::-moz-tree-image(container, queryfolder_unfiled_____) {
-  fill: olive !important
+  fill: olive !important;
 }
 
 /* Avoid overriding classic Bookmarks Toolbar and Other Bookmarks icons in menus */
 
 #BMB_bookmarksPopup #BMB_bookmarksToolbar.menu-iconic-icon,
 #bookmarksMenu #bookmarksToolbarFolderMenu.menu-iconic-icon {
-  list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png") !important
+  list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png") !important;
 }
 
 #BMB_bookmarksPopup #BMB_unsortedBookmarks.menu-iconic-icon,
 #bookmarksMenu #menu_unsortedBookmarks.menu-iconic-icon {
-  list-style-image: url("chrome://browser/skin/places/unsortedBookmarks.png") !important
+  list-style-image: url("chrome://browser/skin/places/unsortedBookmarks.png") !important;
 }
 
 /*
@@ -181,13 +181,13 @@ window:not([privatebrowsingmode]) #navigator-toolbox > #nav-bar {
   box-shadow: none !important;
   background-image: none !important;
   transition: 400ms !important;
-  z-index: 0 !important
+  z-index: 0 !important;
 }
 
 /* Margin from top when hidden (necessary for the transition to work) */
 
 findbar[hidden] {
-  margin-top: -2em !important
+  margin-top: -2em !important;
 }
 
 /* Aligns the close button to the center */
@@ -196,7 +196,7 @@ findbar[hidden] {
   margin-inline-start: 0.5em !important;
   vertical-align: middle !important;
   margin-bottom: 0.25em !important;
-  height: inherit !important
+  height: inherit !important;
 }
 
 /*
@@ -210,7 +210,7 @@ findbar[hidden] {
 #urlbar,
 .searchbar-textbox {
   border: none !important;
-  box-shadow: none !important
+  box-shadow: none !important;
 }
 
 /*
@@ -220,53 +220,53 @@ findbar[hidden] {
  */
 
 .tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
-  display: none !important
+  display: none !important;
 }
 
 .tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
-  display: -moz-box !important
+  display: -moz-box !important;
 }
 
 /** Remove URL bar's background **/
 
 #urlbar {
-  background: none !important
+  background: none !important;
 }
 
 /** Hide identity icon in address bar (the one before SSL icon) **/
 
 #identity-box {
-  padding-inline-start: 0 !important
+  padding-inline-start: 0 !important;
 }
 
 #identity-icon {
-  width: 0 !important
+  width: 0 !important;
 }
 
 #identity-popup {
-  margin-left: -8px !important
+  margin-left: -8px !important;
 }
 
 #identity-box:hover:not(.no-hover):not([open="true"]) {
-  border-radius: var(--toolbarbutton-border-radius) !important
+  border-radius: var(--toolbarbutton-border-radius) !important;
 }
 
 #identity-box[open="true"] {
-  background: none !important
+  background: none !important;
 }
 
 /** Add border radius to urlbar icons **/
 
 .urlbar-history-dropmarker,
 .urlbar-page-action {
-  border-radius: var(--toolbarbutton-border-radius) !important
+  border-radius: var(--toolbarbutton-border-radius) !important;
 }
 
 /** Increase opacity of syncing icon **/
 
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),
 [overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
-  opacity: 1 !important
+  opacity: 1 !important;
 }
 
 /** Context menus of Tree Style Tab **/
@@ -278,7 +278,7 @@ findbar[hidden] {
   min-width: 1px;
   color: MenuText !important;
   padding: 6px 0 !important;
-  background-color: #383c4a
+  background-color: #383c4a;
 }
 
 #contentAreaContextMenu li:not(.separator) {
@@ -288,12 +288,12 @@ findbar[hidden] {
   background-color: transparent;
   color: -moz-dialogtext;
   max-width: 42em;
-  font: menu
+  font: menu;
 }
 
 #contentAreaContextMenu li:not(.separator):focus,
 #contentAreaContextMenu li:not(.separator).open {
-  background-color: #cccccc4d !important
+  background-color: #cccccc4d !important;
 }
 
 #contentAreaContextMenu li.separator {
@@ -302,13 +302,13 @@ findbar[hidden] {
   border-top: 1px solid #2b2e39 !important;
   border-bottom: none !important;
   margin: 6px 0 !important;
-  padding: 0 !important
+  padding: 0 !important;
 }
 
 #contentAreaContextMenu li[data-icon]:not([data-icon-color]) {
-  background-position-x: calc(1em - 16px + 1em) !important
+  background-position-x: calc(1em - 16px + 1em) !important;
 }
 
 #contentAreaContextMenu #treestyletab_piro_sakura_ne_jp-menuitem-_context_closeOtherTabs {
-  display: none
+  display: none;
 }

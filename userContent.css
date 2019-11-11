@@ -1,260 +1,106 @@
-:root {
-  --in-content-page-color: #dfdfdf !important;
-  --in-content-page-background: #303030 !important;
-  --in-content-text-color: #dfdfdf !important;
-  --in-content-selected-text: #3b5074 !important;
-  --in-content-category-text: #d3dae3 !important;
-  --in-content-box-background: #2f343f !important;
-  --in-content-box-background-odd: #2f343f !important;
-  --in-content-box-background-hover: #404552 !important;
-  --in-content-box-background-active: #5294e2 !important;
-  --in-content-box-border-color: #404552 !important;
-  --in-content-link-color: #2980b9 !important;
-  --in-content-link-color-hover: #5294e2 !important;
-  --in-content-link-color-active: #3daee9 !important;
-  --in-content-link-color-visited: #5294e2 !important
-}
+/** Blank pages, GitHub raw files, and local files **/
 
-/*
-@-moz-document url-prefix("about:blank") {
-  html {
-    background-color: var(--in-content-page-background);
-    color: var(--in-content-page-color)
-  }
-}
-*/
-
-@-moz-document regexp("^https?:\/\/raw\.githubusercontent\.com\/.*"),
+@-moz-document url-prefix("about:blank"),
+  regexp("^https?:\/\/raw\.githubusercontent\.com\/.*"),
   url-prefix("file:///") {
   html {
-    background-color: var(--in-content-page-background);
-    color: var(--in-content-page-color);
-
-    /* font-size: 1rem; */
+    background-color: #2a2a2e;
+    color: rgb(249, 249, 250);
+    font-size: 1.25em;
   }
 }
 
-/*
-@-moz-document url-prefix("about:") {
-  button.primary {
-    color: var(--in-content-text-color) !important
-  }
-}
-*/
+/** Reader mode **/
 
 @-moz-document url-prefix("about:reader") {
   :root {
     --toolbar-dark-background-color: #404552;
     --toolbar-dark-text-color: #d3dae3;
     --reader-dark-background-color: #2f343f;
-    --reader-dark-text-color: #d3dae3
+    --reader-dark-text-color: #d3dae3;
   }
 
   body.serif {
-    font-family: serif !important
+    font-family: serif !important;
   }
 
   body.sans-serif {
-    font-family: sans-serif !important
+    font-family: sans-serif !important;
   }
 
   body.dark {
     background-color: var(--reader-dark-background-color) !important;
-    color: var(--reader-dark-text-color) !important
+    color: var(--reader-dark-text-color) !important;
   }
 
   body.dark .domain {
     color: #2980b9 !important;
-    border-bottom: 0 !important
+    border-bottom: 0 !important;
   }
 
   body.dark .domain:hover {
-    color: #5294e2 !important
+    color: #5294e2 !important;
   }
 
   body.dark .toolbar {
     background-color: var(--toolbar-dark-background-color) !important;
     color: var(--toolbar-dark-text-color) !important;
-    border-right: 1px solid #666a73 !important
+    border-right: 1px solid #666a73 !important;
   }
 
   body.dark .style-button,
   body.dark .close-button {
     background-image: none !important;
     background-color: var(--toolbar-dark-background-color) !important;
-    border-color: #666a73 !important
+    border-color: #666a73 !important;
   }
 
   body.dark .style-button::after,
   body.dark .close-button::after {
     color: var(--toolbar-dark-text-color) !important;
-    font-size: 22px
+    font-size: 22px;
   }
 
   body.dark .style-button::after {
-    content: 'Aa'
+    content: 'Aa';
   }
 
   body.dark .close-button::after {
-    content: '←'
+    content: '←';
   }
 }
+
+/** Home and new tab **/
 
 @-moz-document url-prefix("about:home"),
   url-prefix("about:newtab") {
   body {
-    background-color: var(--in-content-page-background) !important
+    --newtab-background-color: #2a2a2e !important;
+    --newtab-text-primary-color: rgb(249, 249, 250) !important;
+    --newtab-text-secondary-color: #d7d7db !important;
+    --newtab-textbox-background-color: #202023 !important;
+    --newtab-snippets-background-color: #2a2a2e !important;
+    --newtab-snippets-hairline-color: rgba(249, 249, 250, 0.2) !important;
+    --newtab-section-header-text-color: #d7d7db !important;
+    --newtab-search-wordmark-color: rgb(249, 249, 250) !important;
+    --newtab-icon-primary-color: rgb(249, 249, 250) !important;
+    --newtab-element-hover-color: rgba(249, 249, 250, 0.1) !important;
+    --newtab-link-primary-color: #45a1ff !important;
+    --newtab-search-dropdown-color: #202023 !important;
+    --newtab-search-dropdown-header-color: #202023 !important;
+    --newtab-border-secondary-color: rgba(249, 249, 250, 0.05) !important;
+    --newtab-search-icon-color: rgb(249, 249, 250) !important;
   }
 
-  input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type="checkbox"]):not([type="radio"]) {
-    background-color: var(--in-content-page-background) !important;
-    color: var(--in-content-page-color) !important
+  .ASRouterButton.secondary {
+    background-color: rgba(249, 249, 250, 0.1) !important;
   }
 
-  .search-wrapper .logo-and-wordmark .wordmark {
-    fill: var(--in-content-page-color) !important
+  .ASRouterButton.secondary:hover {
+    background-color: rgba(249, 249, 250, 0.15) !important;
   }
 
-  .SnippetBaseContainer {
-    background-color: var(--in-content-page-background) !important;
-    color: var(--in-content-page-color) !important
-  }
-
-  #scene1 h1,
-  #scene1 p,
-  .snippet section {
-    color: #d3dae3 !important
-  }
-
-  #snippets-container a {
-    color: #00bcd4 !important
-  }
-
-  #snippets-container a:hover {
-    color: #00bcd4 !important
-  }
-
-  .icon.icon-settings,
-  .search-wrapper .search-button,
-  .snippet .block-snippet-button {
-    fill: #d3dae3 !important
-  }
-
-  .search-wrapper:active input,
-  .search-wrapper input:focus {
-    border: 1px solid #3daee9 !important;
-    box-shadow: #3daee9 !important
-  }
-
-  .prefs-button button:hover,
-  .prefs-button button:focus {
-    background-color: transparent !important;
-    fill: #bdc3c7 !important
-  }
-
-  .collapsible-section.active {
-    background-color: #2f343f !important
-  }
-
-  .top-site-outer .top-site-icon {
-    background-color: #373b49 !important
-  }
-
-  .collapsible-section .section-title span {
-    fill: #d3dae3 !important
-  }
-
-  .collapsible-section .section-title span,
-  .top-site-outer .top-site-inner > a {
-    color: #d3dae3 !important
-  }
-
-  .collapsible-section .section-top-bar .context-menu-button {
-    visibility: collapse
-  }
-
-  .top-sites-list:not(.dnd-active) .top-site-outer:-moz-any(.active, :focus, :hover) .tile {
-    box-shadow: inset 0 0 0 1px #3daee9, 0 0 0 5px #3daee9 !important
+  .ASRouterButton.secondary:active {
+    background-color: rgba(249, 249, 250, 0.2) !important;
   }
 }
-
-/*
-@-moz-document url-prefix("about:addons") {
-  .detail-view-container {
-    color: var(--in-content-text-color) !important
-  }
-
-  .detail-row,
-  .detail-row-complex {
-    text-shadow: none !important
-  }
-}
-
-@-moz-document url-prefix("resource://") {
-  *|*:link {
-    color: var(--in-content-link-color) !important
-  }
-
-  *|*:link:hover {
-    color: var(--in-content-link-color-hover) !important
-  }
-
-  *|*:link:active {
-    color: var(--in-content-link-color-active) !important
-  }
-}
-
-@-moz-document url-prefix("moz-extension://") {
-  html,
-  body {
-    color: var(--in-content-page-color)
-  }
-}
-*/
-
-/*
-input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']):not([type='radio']),
-textarea,
-select {
-  -moz-appearance: none !important;
-  background-color: white;
-  color: black
-}
-
-#downloads-indicator-counter {
-  color: white
-}
-
-#tabbar .counter {
-  background-color: #404552;
-  color: #d3dae3;
-  padding: 4px 5px;
-  border-radius: 4px;
-  margin-right: 5px;
-  box-shadow: 0 1px 4px 0 #0c0c0d1a, 0 0 0 1px #0003
-}
-
-#tabbar .counter::before {
-  content: none !important
-}
-
-#tabbar .counter::after {
-  content: none !important
-}
-
-#tabbar .newtab-button {
-  padding: 6px !important
-}
-
-#tabbar .tab.discarded {
-  opacity: 0.5 !important
-}
-
-#tabbar .tab .closebox {
-  visibility: collapse
-}
-
-#tabbar .tab:hover .closebox {
-  visibility: visible
-}
-*/
