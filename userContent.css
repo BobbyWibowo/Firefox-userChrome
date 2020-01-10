@@ -1,3 +1,15 @@
+/** Global **/
+
+:root {
+  /** Page defaults to "dark" scrollbar **/
+  scrollbar-color: #737373 #38383d;
+}
+
+body.illustrated.neterror {
+  color: rgb(249, 249, 250);
+  background-color: #2a2a2e;
+}
+
 /** Blank pages, GitHub raw files, and local files **/
 
 @-moz-document url-prefix("about:blank"),
