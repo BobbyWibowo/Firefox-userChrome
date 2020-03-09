@@ -1,0 +1,110 @@
+/** Color schemes **/
+
+:root {
+  --tabbar-bg: #202023 !important;
+  --tab-surface: #484848 !important;
+  --tab-text: #f9f9fa !important;
+}
+
+/** Show title of unread tabs with italic font **/
+
+.tab.unread .label-content {
+  font-style: italic !important;
+}
+
+/** Add private browsing indicator per tab **/
+
+.tab.private-browsing .label::before {
+  content: "🕶";
+}
+
+/** Show internal tab id in the debug mode **/
+
+:root.debug .tab:not(.faviconized)::after {
+  content: attr(data-tab-id);
+  opacity: 0.5;
+}
+
+/** Regular width scrollbar **/
+
+#tabbar {
+  scrollbar-width: auto;
+}
+
+/** Put scrollbar rightside **/
+
+:root.left #tabbar {
+  direction: ltr;
+}
+
+/** Tab numbering and counting **/
+
+#tabbar {
+  counter-reset: vtabs atabs tabs;
+
+  /* vtabs tracks visible tabs, atabs tracks active tabs, tabs tracks all tabs */
+}
+
+tab-item:not(.collapsed):not(.discarded) {
+  counter-increment: vtabs atabs tabs;
+}
+
+tab-item:not(.collapsed) {
+  counter-increment: vtabs tabs;
+}
+
+tab-item:not(.discarded) {
+  counter-increment: atabs tabs;
+}
+
+tab-item {
+  counter-increment: tabs;
+}
+
+/** Tab counts in new tab button **/
+
+.newtab-button::after {
+  content: var(--tab-count-text);
+  pointer-events: none;
+  position: absolute;
+  left: 0.5em;
+
+  /* TST 2.4.0 - Fix for Issue #1664 */
+  background: transparent !important;
+  mask: none !important;
+}
+
+/** Total tab count **/
+
+.newtab-button {
+  --tab-count-text: counter(atabs) "/" counter(tabs) " tabs";
+}
+
+/** Change close button style **/
+
+tab-closebox::after {
+  content: "⨉";
+  background: none;
+  line-height: 1;
+  mask: none;
+  text-align: center;
+  width: 1.25em;
+}
+
+tab-item tab-closebox::before {
+  margin-left: -0.025em;
+}
+
+/** Better collapsed tabs counter **/
+
+.counter::before,
+.counter::after {
+  content: '';
+}
+
+.counter {
+  display: inline-block;
+  background: rgba(249, 249, 250, 0.1);
+  padding: 1px 5px 2px 5px;
+  border-radius: 2px;
+}

@@ -16,3 +16,11 @@ These are fully experimental and hosted here mainly as backups.
 ## To-do(s)
 
 * Update dark color scheme for Reader mode (currently using an old color scheme based on Arc-Dark).
+
+## TreeStyleTab.css
+
+Open Tree Style Tab's preferences through Add-ons > Tree Style Tab > Preferences.
+
+Enable Plain Dark theme in Appearance > Theme.
+
+Then use the CSS file in Advanced > Extra style rules for sidebar contents.
