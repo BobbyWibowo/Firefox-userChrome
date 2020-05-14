@@ -1,6 +1,12 @@
 :root {
-  --urlbar-separator-color: #868686 !important;
+  /** Override built-in variables **/
+  --toolbar-bgcolor: #383838 !important;
+  --toolbar-bgimage: none !important;
+  --urlbar-separator-color: var(--toolbar-bgcolor) !important;
+
+  /** Custom variables **/
   --custom-browser-background: #303030;
+  --urlbar-padding-inline: 4px;
 
   /** Hide Tabs Till Hover **/
   --htth-animation-duration: 0.1s;
@@ -201,13 +207,13 @@ menuseparator {
 /** Remove URL bar's background **/
 
 #urlbar[breakout][breakout-extend] {
-  width: calc( 100% + ( 4px * 2 ) ) !important;
-  left: -4px !important;
+  width: calc(100% + ( var(--urlbar-padding-inline) * 2)) !important;
+  left: calc(-1 * var(--urlbar-padding-inline)) !important;
   top: 0 !important;
 }
 
 #urlbar > #urlbar-background {
-  background-color: #484848 !important;
+  background-color: var(--toolbar-bgcolor) !important;
 }
 
 #urlbar.megabar[focused="true"] > #urlbar-background {
@@ -221,7 +227,7 @@ menuseparator {
 #urlbar[breakout][breakout-extend] > #urlbar-input-container {
   height: var(--urlbar-toolbar-height) !important;
   padding-block: 0 !important;
-  padding-inline: 4px !important;
+  padding-inline: var(--urlbar-padding-inline) !important;
 }
 
 /** Add border radius to urlbar icons **/

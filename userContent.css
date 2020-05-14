@@ -1,13 +1,12 @@
 /** Global **/
 
 :root {
+  --tabbar-bg: #282828 !important;
+  --in-content-page-background: #303030 !important;
+  --in-content-page-color: #dfdfdf !important;
+
   /** Page defaults to "dark" scrollbar **/
   scrollbar-color: #737373 #38383d;
-}
-
-body.illustrated.neterror {
-  color: rgb(249, 249, 250);
-  background-color: #2a2a2e;
 }
 
 /** Blank pages, GitHub raw files, and local files **/
@@ -84,14 +83,13 @@ body.illustrated.neterror {
 
 /** Home and new tab **/
 
-@-moz-document url-prefix("about:home"),
-  url-prefix("about:newtab") {
+@-moz-document url-prefix("about:home"), url-prefix("about:newtab") {
   body {
-    --newtab-background-color: #2a2a2e !important;
-    --newtab-text-primary-color: rgb(249, 249, 250) !important;
+    --newtab-background-color: #303030 !important;
+    --newtab-text-primary-color: #dfdfdf !important;
     --newtab-text-secondary-color: #d7d7db !important;
-    --newtab-textbox-background-color: #202023 !important;
-    --newtab-snippets-background-color: #2a2a2e !important;
+    --newtab-textbox-background-color: #383838 !important;
+    --newtab-snippets-background-color: #282828 !important;
     --newtab-snippets-hairline-color: rgba(249, 249, 250, 0.2) !important;
     --newtab-section-header-text-color: #d7d7db !important;
     --newtab-search-wordmark-color: rgb(249, 249, 250) !important;

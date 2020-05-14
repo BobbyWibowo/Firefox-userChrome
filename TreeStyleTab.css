@@ -1,9 +1,10 @@
 /** Color schemes **/
 
 :root {
-  --tabbar-bg: #202023 !important;
-  --tab-surface: #484848 !important;
+  --tab-surface-regular: none !important;
+  --tab-surface: var(--tab-surface-regular) !important;
   --tab-text: #f9f9fa !important;
+  --tab-border: transparent !important;
 }
 
 /** Show title of unread tabs with italic font **/
@@ -67,9 +68,7 @@ tab-item {
   content: var(--tab-count-text);
   pointer-events: none;
   position: absolute;
-  top: 2px;
-  right: 12px;
-  font-size: 13px;
+  left: 1.5em;
 
   /* TST 2.4.0 - Fix for Issue #1664 */
   background: transparent !important;
@@ -106,7 +105,80 @@ tab-item tab-closebox::before {
 
 .counter {
   display: inline-block;
-  background: rgba(249, 249, 250, 0.1);
+  background: #393939;
   padding: 1px 5px 2px 5px;
   border-radius: 2px;
+  margin-left: 4px;
+}
+
+/** Others **/
+
+.newtab-button {
+  padding: 0.494em 0.25em !important;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.newtab-action-selector-anchor,
+.contextual-identities-selector-anchor {
+  padding-top: 0.7em !important;
+  cursor: pointer;
+}
+
+.newtab-action-selector-anchor::before {
+  left: 0.2em;
+  position: relative;
+}
+
+.twisty[title],
+tab-closebox,
+#newtab-action-selector li,
+#contextual-identities-selector li {
+  cursor: pointer;
+}
+
+#tabbar {
+  padding: 0 4px;
+}
+
+#all-tabs {
+  padding-top: 4px;
+}
+
+tab-item.pinned {
+  margin: 0 4px;
+}
+
+tab-item.pinned {
+  margin-top: 4px;
+}
+
+tab-item,
+.after-tabs button {
+  border-radius: 3px;
+}
+
+tab-item:hover {
+  background: #393939;
+}
+
+tab-item.active {
+  background: #345284;
+}
+
+tab-item.active:hover {
+  background: #44608e;
+}
+
+tab-item .highlighter {
+  display: none;
+}
+
+.after-tabs button:hover {
+  background: #393939;
+}
+
+:root.left tab-item:not(.pinned):not(collapsed),
+.after-tabs button {
+  box-shadow: none;
 }

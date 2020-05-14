@@ -4,6 +4,7 @@
     "declaration-block-trailing-semicolon": "always",
     "indentation": 2,
     "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
     "selector-type-no-unknown": null
   }
 }
