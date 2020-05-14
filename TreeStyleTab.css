@@ -9,7 +9,7 @@
 
 /** Show title of unread tabs with italic font **/
 
-.tab.unread:not(.pinned) .label-content {
+.tab.unread:not(.pinned):not(.discarded) .label-content {
   font-style: italic !important;
 }
 
