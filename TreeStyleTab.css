@@ -67,7 +67,9 @@ tab-item {
   content: var(--tab-count-text);
   pointer-events: none;
   position: absolute;
-  left: 0.5em;
+  top: 2px;
+  right: 12px;
+  font-size: 13px;
 
   /* TST 2.4.0 - Fix for Issue #1664 */
   background: transparent !important;

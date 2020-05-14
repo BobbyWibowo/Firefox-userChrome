@@ -200,8 +200,28 @@ menuseparator {
 
 /** Remove URL bar's background **/
 
-#urlbar {
-  background: none !important;
+#urlbar[breakout][breakout-extend] {
+  width: calc( 100% + ( 4px * 2 ) ) !important;
+  left: -4px !important;
+  top: 0 !important;
+}
+
+#urlbar > #urlbar-background {
+  background-color: #484848 !important;
+}
+
+#urlbar.megabar[focused="true"] > #urlbar-background {
+  border-color: var(--urlbar-separator-color) !important;
+}
+
+#urlbar:not([breakout-extend]) > #urlbar-background {
+  display: none !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: var(--urlbar-toolbar-height) !important;
+  padding-block: 0 !important;
+  padding-inline: 4px !important;
 }
 
 /** Add border radius to urlbar icons **/

@@ -26,10 +26,10 @@ body.illustrated.neterror {
 
 @-moz-document url-prefix("about:reader") {
   :root {
-    --toolbar-dark-background-color: #404552;
-    --toolbar-dark-text-color: #d3dae3;
-    --reader-dark-background-color: #2f343f;
-    --reader-dark-text-color: #d3dae3;
+    --toolbar-dark-background-color: #2a2a2e;
+    --toolbar-dark-text-color: #dfdfdf;
+    --reader-dark-background-color: #202023;
+    --reader-dark-text-color: #dfdfdf;
   }
 
   body.serif {
