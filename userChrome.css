@@ -1,11 +1,11 @@
 :root {
   /** Override built-in variables **/
-  --toolbar-bgcolor: #383838 !important;
+  --toolbar-bgcolor: #2d2d2d !important;
   --toolbar-bgimage: none !important;
   --urlbar-separator-color: var(--toolbar-bgcolor) !important;
 
   /** Custom variables **/
-  --custom-browser-background: #303030;
+  --custom-browser-background: #242424;
   --urlbar-padding-inline: 4px;
 
   /** Hide Tabs Till Hover **/

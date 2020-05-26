@@ -105,7 +105,7 @@ tab-item tab-closebox::before {
 
 .counter {
   display: inline-block;
-  background: #393939;
+  background: #2a2a2a;
   padding: 1px 5px 2px 5px;
   border-radius: 2px;
   margin-left: 4px;
@@ -158,24 +158,21 @@ tab-item,
   border-radius: 3px;
 }
 
-tab-item:hover {
-  background: #393939;
+tab-item:hover,
+.after-tabs button:hover {
+  background: #2a2a2a;
 }
 
 tab-item.active {
-  background: #345284;
+  background: #333d4d;
 }
 
 tab-item.active:hover {
-  background: #44608e;
+  background: #434c5b;
 }
 
 tab-item .highlighter {
   display: none;
-}
-
-.after-tabs button:hover {
-  background: #393939;
 }
 
 :root.left tab-item:not(.pinned):not(collapsed),

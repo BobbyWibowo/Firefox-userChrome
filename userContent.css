@@ -1,12 +1,13 @@
 /** Global **/
 
 :root {
-  --tabbar-bg: #282828 !important;
-  --in-content-page-background: #303030 !important;
+  --tabbar-bg: #181818 !important;
+  --in-content-page-background: #242424 !important;
   --in-content-page-color: #dfdfdf !important;
 
   /** Page defaults to "dark" scrollbar **/
-  scrollbar-color: #737373 #38383d;
+  scrollbar-color: #c1c1c1 var(--in-content-page-background);
+  scrollbar-width: thin;
 }
 
 /** Blank pages, GitHub raw files, and local files **/
@@ -15,8 +16,8 @@
   regexp("^https?:\/\/raw\.githubusercontent\.com\/.*"),
   url-prefix("file:///") {
   html {
-    background-color: #2a2a2e;
-    color: rgb(249, 249, 250);
+    background-color: var(--in-content-page-background);
+    color: var(--in-content-page-color);
     font-size: 1.25em;
   }
 }
@@ -25,10 +26,10 @@
 
 @-moz-document url-prefix("about:reader") {
   :root {
-    --toolbar-dark-background-color: #2a2a2e;
-    --toolbar-dark-text-color: #dfdfdf;
-    --reader-dark-background-color: #202023;
-    --reader-dark-text-color: #dfdfdf;
+    --toolbar-dark-background-color: var(--tabbar-bg);
+    --toolbar-dark-text-color: var(--in-content-page-color);
+    --reader-dark-background-color: var(--in-content-page-background);
+    --reader-dark-text-color: var(--in-content-page-color);
   }
 
   body.serif {
@@ -85,8 +86,8 @@
 
 @-moz-document url-prefix("about:home"), url-prefix("about:newtab") {
   body {
-    --newtab-background-color: #303030 !important;
-    --newtab-text-primary-color: #dfdfdf !important;
+    --newtab-background-color: var(--in-content-page-background) !important;
+    --newtab-text-primary-color: var(--in-content-page-color) !important;
     --newtab-text-secondary-color: #d7d7db !important;
     --newtab-textbox-background-color: #383838 !important;
     --newtab-snippets-background-color: #282828 !important;
