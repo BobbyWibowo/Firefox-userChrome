@@ -71,6 +71,7 @@ menuseparator {
 
 #main-window:not([privatebrowsingmode]) #navigator-toolbox #titlebar {
   -moz-box-ordinal-group: 1000 !important;
+  background-color: var(--toolbar-bgcolor);
 }
 
 /** Hides Tabs Till Hover **/
