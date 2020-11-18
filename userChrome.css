@@ -300,3 +300,34 @@ menuseparator {
   display: none !important;
   width: 0 !important;
 }
+
+/** HTTPS in address bar **/
+
+/*
+#identity-box[pageproxystate="valid"].verifiedDomain > #identity-icon {
+  fill: #01a299 !important;
+  fill-opacity: 1 !important;
+}
+*/
+
+#identity-popup[connection^="secure"] .identity-popup-security-connection,
+.identity-popup-connection-secure {
+  color: #01a299 !important;
+}
+
+#identity-box[pageproxystate="valid"].verifiedDomain ~ .urlbar-input-box::before {
+  color: #01a299;
+  content: "https://";
+  position: absolute;
+  z-index: 2;
+  line-height: var(--urlbar-height);
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  top: -1px;
+  text-shadow: 0 0 1px var(--toolbar-bgcolor);
+}
+
+#urlbar[focused="true"] #identity-box[pageproxystate="valid"].verifiedDomain ~ .urlbar-input-box::before {
+  display: none;
+}
