@@ -21,10 +21,6 @@
 
 /** et cetera **/
 
-#sidebar-header {
-  display: none;
-}
-
 .tabbrowser-tab[pending] {
   opacity: 0.75;
 }
