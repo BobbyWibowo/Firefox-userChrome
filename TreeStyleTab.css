@@ -1,3 +1,7 @@
+/**
+ * Requires Proton theme to be selected in Tree Style Tab Options > Appearance > Theme
+ */
+
 /** Color schemes **/
 
 :root {
@@ -5,6 +9,7 @@
   --tab-surface: var(--tab-surface-regular) !important;
   --tab-text: #f9f9fa !important;
   --tab-border: transparent !important;
+  --tab-dropshadow-size: 0 !important;
 }
 
 /** Show title of unread tabs with italic font **/
@@ -26,16 +31,16 @@
   opacity: 0.5;
 }
 
-/** Regular width scrollbar **/
-
-#tabbar {
-  scrollbar-width: auto;
-}
-
 /** Put scrollbar rightside **/
 
 :root.left #tabbar {
   direction: ltr;
+}
+
+/** Custom scrollbar colors **/
+
+#tabbar {
+  scrollbar-color: #c1c1c1 var(--theme-colors-sidebar);
 }
 
 /** Tab numbering and counting **/
@@ -67,8 +72,7 @@ tab-item {
 .newtab-button::after {
   content: var(--tab-count-text);
   pointer-events: none;
-  position: absolute;
-  left: 1.5em;
+  width: 100%;
 
   /* TST 2.4.0 - Fix for Issue #1664 */
   background: transparent !important;
@@ -111,6 +115,37 @@ tab-item tab-closebox::before {
   margin-left: 4px;
 }
 
+/** Hide twisty and collapse/expand tree by clicking on tab's icon **/
+
+tab-item tab-twisty {
+  margin-right: -1em;
+  opacity: 0 !important;
+  position: relative;
+  z-index: 10000;
+}
+
+tab-item-substance {
+  padding-left: calc(1em + 0.25em);
+}
+
+/** Only show tab close button on hover **/
+
+/* "#tabbar" is required for TST 3.4.0 and later! */
+#tabbar tab-item tab-item-substance:not(:hover) tab-closebox {
+  display: none;
+}
+
+/** Change tab margin **/
+
+tab-item {
+  --tab-margin-left: 4px;
+  --tab-margin-right: 4px;
+}
+
+tab-item.pinned tab-item-substance {
+  margin-right: calc(var(--tab-margin-left) + var(--tab-indent));
+}
+
 /** Others **/
 
 .newtab-button {
@@ -135,47 +170,4 @@ tab-closebox,
 #newtab-action-selector li,
 #contextual-identities-selector li {
   cursor: pointer;
-}
-
-#tabbar {
-  padding: 0 4px;
-}
-
-#all-tabs {
-  padding-top: 4px;
-}
-
-tab-item.pinned {
-  margin: 0 4px;
-}
-
-tab-item.pinned {
-  margin-top: 4px;
-}
-
-tab-item,
-.after-tabs button {
-  border-radius: 3px;
-}
-
-tab-item:hover,
-.after-tabs button:hover {
-  background: #2a2a2a;
-}
-
-tab-item.active {
-  background: #333d4d;
-}
-
-tab-item.active:hover {
-  background: #434c5b;
-}
-
-tab-item .highlighter {
-  display: none;
-}
-
-:root.left tab-item:not(.pinned):not(collapsed),
-.after-tabs button {
-  box-shadow: none;
 }
