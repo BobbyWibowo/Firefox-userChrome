@@ -104,13 +104,13 @@ tab-item tab-closebox::before {
 
 .counter::before,
 .counter::after {
-  content: '';
+  content: "";
 }
 
 .counter {
   display: inline-block;
   background: #2a2a2a;
-  padding: 1px 5px 2px 5px;
+  padding: 1px 5px 2px;
   border-radius: 2px;
   margin-left: 4px;
 }
