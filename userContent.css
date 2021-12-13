@@ -74,11 +74,11 @@
   }
 
   body.dark .style-button::after {
-    content: 'Aa';
+    content: "Aa";
   }
 
   body.dark .close-button::after {
-    content: '←';
+    content: "←";
   }
 }
 
