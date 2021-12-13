@@ -11,6 +11,10 @@
   /** Hide Tabs Till Hover **/
   --htth-animation-duration: 0.1s;
   --htth-margin-closed: -30px;
+
+  /** Full Auto-show/hide Theme **/
+  --thin-tab-width: 30px;
+  --wide-tab-width: 200px;
 }
 
 /** Loading background **/
@@ -27,6 +31,7 @@
 
 /** Context Menus **/
 
+/*
 menupopup {
   padding: 6px 0;
 }
@@ -57,9 +62,11 @@ menuseparator {
   margin: 6px 0;
   padding: 0;
 }
+*/
 
 /** Tabs on bottom **/
 
+/*
 #main-window:not([privatebrowsingmode]) #navigator-toolbox toolbar:not(#nav-bar):not(#toolbar-menubar) {
   -moz-box-ordinal-group: 10;
   margin-top: -1px;
@@ -69,15 +76,16 @@ menuseparator {
   -moz-box-ordinal-group: 1000 !important;
   background-color: var(--toolbar-bgcolor);
 }
+*/
 
 /** Hides Tabs Till Hover **/
 
+/*
 #main-window:not([privatebrowsingmode]) #navigator-toolbox {
   z-index: 1;
   transition: margin-bottom var(--htth-animation-duration);
 }
 
-/* stylelint-disable-next-line no-duplicate-selectors */
 #main-window:not([privatebrowsingmode]) #navigator-toolbox #titlebar {
   position: relative;
   z-index: -1;
@@ -93,12 +101,15 @@ menuseparator {
 #main-window:not([privatebrowsingmode]) #navigator-toolbox:hover #titlebar {
   margin-top: var(--htth-margin-opened);
 }
+*/
 
 /** Disable Bookmarks Toolbar **/
 
+/*
 #navigator-toolbox > #PersonalToolbar {
   visibility: collapse !important;
 }
+*/
 
 /** Colored folders for bookmark sidebar, toolbar, menu button, classic menu
  Updated for Firefox 60 on May 10, 2018 **/
@@ -181,11 +192,13 @@ menuseparator {
  * Contributor(s): Madis0
  */
 
+/*
 #urlbar,
 .searchbar-textbox {
   border: none !important;
   box-shadow: none !important;
 }
+*/
 
 /*
  * Only show close buttons on background tabs when hovering with the mouse
@@ -193,6 +206,7 @@ menuseparator {
  * Contributor(s): Timvde
  */
 
+/*
 .tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
   display: none !important;
 }
@@ -200,6 +214,7 @@ menuseparator {
 .tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
   display: -moz-box !important;
 }
+*/
 
 /** Remove URL bar's background **/
 
@@ -229,6 +244,7 @@ menuseparator {
 
 /** Add border radius to urlbar icons **/
 
+/*
 #identity-box {
   border-radius: 0 var(--toolbarbutton-border-radius) var(--toolbarbutton-border-radius) 0;
 }
@@ -237,16 +253,20 @@ menuseparator {
 .urlbar-page-action {
   border-radius: var(--toolbarbutton-border-radius) !important;
 }
+*/
 
 /** Increase opacity of syncing icon **/
 
+/*
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]),
 [overflowedItem="true"]) > toolbarbutton:not(.toolbarbutton-1)[disabled] {
   opacity: 1 !important;
 }
+*/
 
 /** Context menus of Tree Style Tab **/
 
+/*
 #contentAreaContextMenu,
 #contentAreaContextMenu li:not(.separator).has-submenu ul {
   -moz-appearance: menupopup;
@@ -284,6 +304,7 @@ menuseparator {
 #contentAreaContextMenu li[data-icon]:not([data-icon-color]) {
   background-position-x: calc(1em - 16px + 1em) !important;
 }
+*/
 
 #contentAreaContextMenu #treestyletab_piro_sakura_ne_jp-menuitem-_context_closeOtherTabs {
   display: none;
@@ -304,7 +325,6 @@ menuseparator {
   fill: #01a299 !important;
   fill-opacity: 1 !important;
 }
-*/
 
 #identity-popup[connection^="secure"] .identity-popup-security-connection,
 .identity-popup-connection-secure {
@@ -320,10 +340,49 @@ menuseparator {
   height: 100%;
   display: block;
   pointer-events: none;
-  top: -1px;
+  top: -2px;
   text-shadow: 0 0 1px var(--toolbar-bgcolor);
 }
 
 #urlbar[focused="true"] #identity-box[pageproxystate="valid"].verifiedDomain ~ .urlbar-input-box::before {
   display: none;
+}
+*/
+
+/** Hide horizontal tabs at the top of the window **/
+
+/*
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]):not([privatebrowsingmode]) #TabsToolbar > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#main-window:not([tabsintitlebar="true"]):not([privatebrowsingmode]) #TabsToolbar {
+  visibility: collapse !important;
+}
+*/
+
+/* Hide all tabs EXCEPT currently active tab AND the tab to its left */
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]):not([privatebrowsingmode]) #TabsToolbar .tabbrowser-tab:not([pinned="true"]):not([selected="true"]) {
+  visibility: collapse;
+}
+
+/* Expand currently active tab */
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]):not([privatebrowsingmode]) #TabsToolbar .tabbrowser-tab[selected="true"] {
+  max-width: unset !important;
+}
+
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]):not([privatebrowsingmode]) #TabsToolbar .tabbrowser-tab[selected="true"] .tab-background {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]):not([privatebrowsingmode]) #TabsToolbar .tabbrowser-tab[selected="true"] .tab-close-button {
+  visibility: collapse;
+}
+
+/** Auto-hide sidebar in windows with only one tab **/
+
+#main-window[titlepreface^="[1] "] #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+  visibility: collapse !important;
 }
