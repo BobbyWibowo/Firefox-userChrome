@@ -6,11 +6,13 @@ These are fully experimental and hosted here mainly as backups.
 
 ## Features
 
-* Minimal mode: tabs are hidden by default. They will be shown when hovering the address bar. This is to be used with [Tree Style Tab extension](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/).
+* Minimal mode. Only pinned tabs and active tab will be visible above URL bar (native Title Bar must be disabled). This is to be used with [Tree Style Tab extension](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/).
+* Auto-hide sidebar when fullscreen (intended to auto-hide Tree Style Tab sidebar).
+* Auto-hide sidebar when there's only 1 active tab (intended to auto-hide Tree Style Tab sidebar; unfortunately requires [Tab Count in Window Title extension](https://addons.mozilla.org/en-US/firefox/addon/tab-count-in-window-title/)).
+* Various tweaks to Tree Style Tab sidebar itself ([TreeStyleTab.css](#treestyletabcss))
 * Dark theme in built-in home and new tab pages, GitHub raw files, local files, blank pages (matches Firefox's built-in dark color scheme).
-* Larger context menus (I may remove this in the future).
-* Compact find bar (Ctrl+F).
-* Borderless address and search bars.
+* Find bar (Ctrl+F) moved to the top.
+* Removed URL bar's background and borders.
 * etc.
 
 ## To-do(s)
@@ -21,6 +23,6 @@ These are fully experimental and hosted here mainly as backups.
 
 Open Tree Style Tab's preferences through Add-ons > Tree Style Tab > Preferences.
 
-Enable Plain Dark theme in Appearance > Theme.
+Enable **Proton** theme in Appearance > Theme.
 
-Then use the CSS file in Advanced > Extra style rules for sidebar contents.
+Then use the content of CSS file in Advanced > Extra style rules for contents provided by Tree Style Tab.
