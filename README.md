@@ -1,6 +1,6 @@
 # Firefox-userChrome
 
-My personal userChrome/userContent, tailored for [Materia Dark KDE theme](https://github.com/PapirusDevelopmentTeam/materia-kde).
+My personal userChrome/userContent, tailored for [Materia Dark KDE theme](https://github.com/PapirusDevelopmentTeam/materia-kde) or just dark UI in general (also works fine in Windows).
 
 These are fully experimental and hosted here mainly as backups.
 
