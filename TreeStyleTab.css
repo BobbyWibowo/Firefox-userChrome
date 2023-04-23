@@ -37,6 +37,17 @@
   direction: ltr;
 }
 
+/* Fix indent for when the scrollbar is shown */
+#tabbar.overflow.scrollbar-autohide tab-item .extra-items-container.indent {
+  display: none;
+}
+
+:root.left.shift-tabs-for-scrollbar-only-on-hover.on-scrollbar-area:hover #tabbar.overflow.scrollbar-autohide tab-item:not(.pinned) tab-item-substance,
+:root.left:not(.shift-tabs-for-scrollbar-only-on-hover) #tabbar.overflow.scrollbar-autohide tab-item:not(.pinned) tab-item-substance {
+  margin-left: calc(var(--tab-margin-right) + var(--tab-indent));
+  margin-right: var(--shift-tabs-for-scrollbar-distance);
+}
+
 /** Custom scrollbar colors **/
 
 #tabbar {
@@ -128,22 +139,18 @@ tab-item-substance {
   padding-left: calc(1em + 0.25em);
 }
 
+/** Hide children tabs counter for non-parent tabs **/
+
+#tabbar tab-item:not([data-child-ids]) .counter,
+#tabbar tab-item:not(.subtree-collapsed) .counter {
+  display: none;
+}
+
 /** Only show tab close button on hover **/
 
 /* "#tabbar" is required for TST 3.4.0 and later! */
 #tabbar tab-item tab-item-substance:not(:hover) tab-closebox {
   display: none;
-}
-
-/** Change tab margin **/
-
-tab-item {
-  --tab-margin-left: 4px;
-  --tab-margin-right: 4px;
-}
-
-tab-item.pinned tab-item-substance {
-  margin-right: calc(var(--tab-margin-left) + var(--tab-indent));
 }
 
 /** Others **/
